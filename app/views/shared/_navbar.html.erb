@@ -12,6 +12,15 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
+        <% unless session[:user_id] %>
+          <li class="nav-item">
+            <%= link_to "Sign up", sign_up_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Logged in as: #{ @user.email }", sign_up_path, class: "nav-link" %> 
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
