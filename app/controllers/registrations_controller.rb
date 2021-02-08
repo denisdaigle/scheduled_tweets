@@ -9,7 +9,7 @@
             session[:user_id] = @user.id #set server side but no one can tamper with it browser side.
             redirect_to root_path, notice: "Successfully created account!"
         else
-            flash[:alert] = "Something was wrong"
+            #flash[:alert] = "Something was wrong" errors provided by @user.save validation in model
             render :new
         end    
     end
